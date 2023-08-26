@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en" style="font-family: Lora, serif;">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css"
+          rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <link href="{{ url_for('static', filename='/css/styles.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!--  Bootstrap icon  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <!--  Boxicon  -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+
+    <title>{% block title %}  {% endblock %}</title>
+</head>
+<body style="font-family: Lora, serif;">
+<!-- Navigation bar -->
+<nav class="navbar navbar-expand-md sticky-top navbar-shrink py-3 navbar-light" id="mainNav"
+     style="height: 71px;margin-top: -1px;padding-bottom: 32px;padding-top: 2px;margin-bottom: 0px;">
+    <div class="container"><a class="navbar-brand d-flex align-items-center justify-content-xl-center" href="{{ url_for('home_page') }}"
+                              style="width: 261px;padding-top: 0px;padding-bottom: 0px;padding-left: 0px;margin-top: -6px;padding-right: 73px;margin-right: -99px;">
+        <img
+                src="/static/img/logo1.png" style="width: 60px;" alt=""><span
+            style="font-weight: bold;font-family: Inter, sans-serif;font-size: 16px;">Signlingo</span></a>
+        <div class="collapse navbar-collapse" id="navcol-2" style="padding-bottom: 0px;margin-bottom: -1px;">
+            <ul class="navbar-nav mx-auto" style="font-family: Inter, sans-serif;font-size: 15px;">
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('home_page') }}">Trang chủ</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('course_page_vn') }}">Khóa học</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('library_page') }}">Thư viện</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('faq_page') }}">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('contribution_page') }}"
+                                        style="font-family: Inter, sans-serif;">Đóng góp</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('about_page') }}">Về chúng tôi</a></li>
+                <li class="nav-item"></li>
+            </ul>
+            <div class="btn-group" role="group">
+                {% block login_buttons %}
+                    <a class="btn btn-primary"
+                       href="{{ url_for('login_page') }}"
+                       role="button"
+                       style="background: rgb(255,255,255);color: var(--bs-navbar-active-color);border-color: var(--bs-btn-border-color);font-family: Inter, sans-serif;font-size: 14px;border-radius: 10px;padding-left: 5px;padding-right: 5px;margin-right: 9px;">
+                        Đăng nhập
+                    </a>
+                    <a class="btn btn-primary"
+                       href="{{ url_for('signup_page') }}"
+                       role="button"
+                       style="font-size: 14px;font-family: Inter, sans-serif;border-radius: 10px;margin-left: -1px;padding-left: 9px;padding-right: 10px;color: rgb(255,255,255);">
+                        Đăng ký
+                    </a>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</nav>
+
+{% block main %}
+
+{% endblock %}
+
+<!-- Footer -->
+<footer id="footer" style="margin-left: -1px;margin-bottom: 3px;padding-bottom: 0;">
+    <div class="footer-top" style="font-family: Inter, sans-serif;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3 footer-contact"><a
+                        class="navbar-brand d-flex align-items-center justify-content-xl-center" href="{{ url_for('home_page') }}"
+                        style="padding-top: 0px;margin-top: 38px;width: 261px;"><img
+                        src="/static/img/logo1.png" style="width: 60px;"><span
+                        style="font-weight: bold;">Signlingo</span></a>
+                    <p style="text-align: center;"><br><strong>Số điện thoại:</strong>
+                        0981976880<br><strong>Email:</strong> signlingo.co@gmail.com<br></p>
+                </div>
+                <div class="col-md-6 col-lg-3 footer-links"><h4></h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i><a href="{{ url_for('home_page') }}">Trang chủ</a></li>
+                        <li><i class="bx bx-chevron-right"></i><a href="{{ url_for('about_page') }}">Về chúng tôi</a></li>
+                        <li><i class="bx bx-chevron-right"></i><a href="{{ url_for('faq_page') }}">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3 footer-links"><h4></h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i><a href="{{ url_for('course_page_vn') }}">Khóa học</a></li>
+                        <li><i class="bx bx-chevron-right"></i><a href="{{ url_for('library_page') }}">Thư viện</a></li>
+                        <li><i class="bx bx-chevron-right"></i><a href="{{ url_for('contribution_page') }}">Đóng góp</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3 footer-links"><h4>Kết nối với chúng tôi</h4>
+                    <p></p>
+                    <div class="social-links mt-3"><a class="twitter" href="#"><i class="bx bxl-twitter"></i></a><a
+                            class="facebook" href="#"><i class="bx bxl-facebook"></i></a><a class="instagram"
+                                                                                            href="#"><i
+                            class="bx bxl-instagram"></i></a><a class="google-plus" href="#"><i
+                            class="bx bxl-skype"></i></a><a class="linkedin" href="#"><i
+                            class="bx bxl-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container py-4">
+        <div class="copyright"><span>        © Copyright </span><strong><span>Signlingo</span></strong><span>. All Rights Reserved      </span>
+        </div>
+        <div class="credits"><a href="https://bootstrapmade.com/"></a></div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="{{ url_for('static', filename='/js/script.min.js') }}"></script>
+<script src="{{ url_for('static', filename='/js/video.js') }}"></script>
+</body>
+</html>

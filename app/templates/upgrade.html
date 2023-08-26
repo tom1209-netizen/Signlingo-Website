@@ -1,0 +1,108 @@
+{% extends 'base_course.html' %}
+
+{% block title %} Nâng cấp {% endblock %}
+
+{% block login_buttons %}
+    {% if session.user_is_logged_in %}
+        <a class="btn btn-primary" href="{{ url_for('logout_page') }}" role="button"
+           style="font-size: 14px;font-family: Inter, sans-serif;border-radius: 10px;margin-left: -1px;padding-left: 9px;padding-right: 10px;color: rgb(255,255,255);">
+            Đăng xuất
+        </a>
+    {% else %}
+        {{ super() }} <!-- Giữ nguyên nội dung của block cha (base.html) -->
+    {% endif %}
+{% endblock %}
+
+{% block main %}
+    <main id="main" class="main" style="background: #f0fbfd;margin-top: -15px;">
+        <div class="pagetitle">
+            <h1 style="font-family: Merriweather, serif;font-size: 29px;text-align: left;margin-top: 37px;">Nâng cấp</h1>
+            <nav>
+                <ol class="breadcrumb" style="font-family: Lora, serif;text-align: center;font-size: 14px;">
+                    <li class="breadcrumb-item"><a href="{{ url_for('home_page') }}"><span>Trang chủ</span></a></li>
+                    <li class="breadcrumb-item active"><span>Nâng cấp</span></li>
+                </ol>
+            </nav>
+        </div><!-- Start: Pricing Free Paid -->
+        <div class="container py-4 py-xl-5" style="margin-top: -34px;">
+            <div class="row mb-5">
+                <div class="col-md-8 col-xl-6 text-center mx-auto">
+                    <h2 style="font-family: Merriweather, serif;font-size: 54px;font-weight: bold;color: #348ddb;padding-bottom: 14px;">Signlingo Pro</h2>
+                    <p class="w-lg-50"></p>
+                    <ul class="list-unstyled" style="font-family: Lora, serif;font-size: 18px;">
+                        <li class="d-flex mb-2"><span class="bs-icon-xs bs-icon-rounded bs-icon-primary-light bs-icon me-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-lg">
+                                    <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"></path>
+                                </svg></span><span>Toàn quyền truy cập vào mọi ngôn ngữ.</span></li>
+                        <li class="d-flex mb-2"><span class="bs-icon-xs bs-icon-rounded bs-icon-primary-light bs-icon me-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-lg">
+                                    <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"></path>
+                                </svg></span><span>Mở khóa tất cả các bài học.</span></li>
+                        <li class="d-flex mb-2"><span class="bs-icon-xs bs-icon-rounded bs-icon-primary-light bs-icon me-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-lg">
+                                    <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"></path>
+                                </svg></span><span>Loại bỏ tất cả quảng cáo.</span></li>
+                        <li class="d-flex mb-2"><span class="bs-icon-xs bs-icon-rounded bs-icon-primary-light bs-icon me-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-lg">
+                                    <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"></path>
+                                </svg></span><span>Tải các nội dung học xuống và học ngoại tuyến.</span></li>
+                        <li class="d-flex mb-2"><span class="bs-icon-xs bs-icon-rounded bs-icon-primary-light bs-icon me-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-lg">
+                                    <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"></path>
+                                </svg></span><span>Không giới hạn số lần ôn tập.</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 d-xl-flex">
+                <div class="col">
+                    <div class="card mb-4">
+                        <div class="card-body text-center p-4">
+                            <h4 class="fw-bold card-subtitle" style="font-family: Lora, serif;">Gói theo tháng</h4>
+                            <h4 class="display-5 fw-bold d-xxl-flex justify-content-xxl-center align-items-xxl-center card-title" style="font-size: 32px;font-family: Lora, serif;text-align: center;padding-bottom: 57px;">69.000 VNĐ<span class="fs-4 fw-normal text-muted">/tháng</span></h4><a class="btn btn-light d-block w-100" role="button" href="#">Đăng ký</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card border-primary border-2 mb-4">
+                        <div class="card-body text-center p-4"><span class="badge rounded-pill bg-primary position-absolute top-0 start-50 translate-middle text-uppercase">Giảm 50% cho lần đầu tiên</span>
+                            <h4 class="fw-bold card-subtitle" style="font-family: Lora, serif;">Gói theo năm</h4>
+                            <h4 class="display-5 fw-bold card-title" style="font-size: 32px;font-family: Lora, serif;">279.000 VNĐ<span class="fs-4 fw-normal text-muted">/năm</span></h4>
+                            <p style="text-decoration: line-through;color: var(--swiper-theme-color);text-align: center;">559.000 VNĐ/năm</p><a class="btn btn-primary d-block w-100" role="button" href="#">Đăng ký</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4">
+                        <div class="card-body text-center p-4">
+                            <h4 class="fw-bold card-subtitle" style="font-family: Lora, serif;">Gói trọn đời</h4>
+                            <h4 class="display-5 fw-bold card-title" style="font-size: 32px;font-family: Lora, serif;padding-bottom: 61px;padding-top: 16px;">999.000 VNĐ<span class="fs-4 fw-normal text-muted"></span></h4><a class="btn btn-dark d-block w-100" role="button" href="#">Đăng ký</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section id="faq" class="faq section-bg" style="background: #f0fbfd;margin-top: 18px;">
+                <div class="container" data-aos="fade-up">
+                    <div class="section-title">
+                        <h2></h2>
+                        <p style="font-family: Merriweather, serif;font-weight: bold;">Câu hỏi thường gặp</p>
+                    </div>
+                    <ul class="faq-list">
+                        <li>
+                            <div class="collapsed question" data-bs-toggle="collapse" href="#faq1"><span style="font-family:Lora, serif;">Tôi có thể hủy đăng ký gói Pro bất cứ lúc nào đúng không?</span><i class="bi bi-chevron-down icon-show"></i><i class="icon-close bi bi-chevron-up"></i></div>
+                            <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+                                <p> Tất nhiên, bạn có thể huỷ gia hạn tự động bất cứ lúc nào sau khi bạn đã thanh toán cho gói đăng ký. Những tính năng có trả tiền sẽ vẫn có hiệu lực cho tới cuối kỳ đăng ký của bạn.Còn nếu bạn đăng ký gói Trọn đời, bạn sẽ không cần huỷ gia hạn tự động bởi đó là gói thanh toán một lần duy nhất. </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsed question" data-bs-toggle="collapse" href="#faq2"><span style="font-family:Lora, serif;">Gói trọn đời hoạt động như thế nào?</span><i class="bi bi-chevron-down icon-show"></i><i class="icon-close bi bi-chevron-up"></i></div>
+                            <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+                                <p> Nếu bạn chọn gói Trọn đời, số tiền sẽ được tính dưới dạng thanh toán trả trước một lần mà không cần gia hạn và bạn sẽ sở hữu trạng thái Pro mãi mãi. </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsed question" data-bs-toggle="collapse" href="#faq3"><span style="font-family:Lora, serif;">Nếu tôi đăng ký gói theo năm thì mức giá sẽ được tính như nào?</span><i class="bi bi-chevron-down icon-show"></i><i class="icon-close bi bi-chevron-up"></i></div>
+                            <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+                                <p> Khi đăng ký năm đầu tiên bạn sẽ được ưu đãi giảm 50% và từ các năm tiếp theo sẽ là giá gốc. </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div><!-- End: Pricing Free Paid -->
+    </main>
+{% endblock %}

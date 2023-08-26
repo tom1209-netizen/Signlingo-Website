@@ -1,0 +1,329 @@
+{% extends 'base.html' %}
+
+{% block title %} Tài liệu {% endblock %}
+
+{% block login_buttons %}
+    {% if session.user_is_logged_in %}
+        <a class="btn btn-primary" href="{{ url_for('logout_page') }}" role="button"
+           style="font-size: 14px;font-family: Inter, sans-serif;border-radius: 10px;margin-left: -1px;padding-left: 9px;padding-right: 10px;color: rgb(255,255,255);">
+            Đăng xuất
+        </a>
+    {% else %}
+        {{ super() }} <!-- Giữ nguyên nội dung của block cha (base.html) -->
+    {% endif %}
+{% endblock %}
+
+{% block main %}
+<section class="services section-bg" id="services-3"
+         style="background: rgb(255,255,255);padding-top: 64px;margin-top: -30px;">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title" style="margin-bottom: -32px;"><h2></h2>
+            <p style="font-family: Merriweather, serif;"><strong><span
+                    style="color: rgb(33, 37, 41); background-color: rgb(230, 245, 252);">Tài liệu</span></strong></p>
+        </div>
+        <section class="services section-bg" id="services"
+                 style="background: rgba(255,255,255,0);margin-bottom: 2px;padding-bottom: 0px;">
+            <div class="row" style="margin-left: -16px;padding-right: 0px;margin-right: -26px;">
+                <div class="col-md-6 col-lg-3 col-xl-5 d-flex align-items-stretch" data-aos="zoom-in"
+                     data-aos-delay="300" style="width: 437px;margin-left: -5px;">
+                    <div class="icon-box" style="padding-bottom: 52px;margin-bottom: 78px;">
+                        <div class="icon" style="width: 370px;height: 200px;border-radius: 15px;padding-right: 11px;">
+                            <picture style="width: 370px;border-radius: 15px;"><img height="80" src="/static/img/document/HDHTN.png"
+                                                                                    style="width: 370px;height: 230px;border-radius: 15px;"
+                                                                                    width="100">
+                            </picture>
+                        </div>
+                        <h4 class="title"
+                            style="font-weight: bold;padding-bottom: 22px;padding-top: 24px;margin-top: 17px;margin-bottom: -32px;">
+                            <a href="http://me.phununet.com/WikiPhununet/ChiTietWiKi.aspx?m=0&amp;StoreID=26631"
+                               style="font-weight: bold;font-family: 'Playfair Display', serif;font-size: 22px;"><span
+                                    style="color: rgb(33, 37, 41);">Hướng dẫn học thủ ngữ khi tiếp xúc với người khiếm thính</span></a>
+                        </h4>
+                        <p class="description" style="font-family: Lora, serif;font-size: 16px;font-style: italic;"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 col-xl-5 d-flex align-items-stretch" data-aos="zoom-in"
+                     data-aos-delay="300" style="width: 437px;margin-left: -5px;">
+                    <div class="icon-box" style="padding-bottom: 52px;margin-bottom: 78px;">
+                        <div class="icon" style="width: 370px;height: 200px;border-radius: 15px;padding-right: 11px;">
+                            <picture style="width: 370px;border-radius: 15px;"><img height="80" src="/static/img/document/MSPT.png"
+                                                                                    style="width: 370px;height: 230px;border-radius: 15px;"
+                                                                                    width="100">
+                            </picture>
+                        </div>
+                        <h4 class="title"
+                            style="font-weight: bold;padding-bottom: 22px;padding-top: 24px;margin-top: 17px;margin-bottom: -32px;">
+                            <a href="http://vjes.vnies.edu.vn/sites/default/files/baivietso6_0.pdf"
+                               style="font-weight: bold;font-family: 'Playfair Display', serif;font-size: 22px;">Một số
+                                phương thức hình thành kí hiệu của người điếc Việt Nam</a></h4>
+                        <p class="description" style="font-family: Lora, serif;font-size: 16px;font-style: italic;"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 col-xl-5 d-flex align-items-stretch" data-aos="zoom-in"
+                     data-aos-delay="300" style="width: 437px;margin-left: -5px;">
+                    <div class="icon-box" style="padding-bottom: 52px;margin-bottom: 78px;">
+                        <div class="icon" style="width: 370px;height: 200px;border-radius: 15px;padding-right: 11px;">
+                            <picture style="width: 370px;border-radius: 15px;"><img height="80" src="/static/img/document/CHNNKH.png"
+                                                                                    style="width: 370px;height: 230px;border-radius: 15px;"
+                                                                                    width="100">
+                            </picture>
+                        </div>
+                        <h4 class="title"
+                            style="font-weight: bold;padding-bottom: 22px;padding-top: 24px;margin-top: 17px;margin-bottom: -32px;">
+                            <a href="https://www.recursosdeautoayuda.com/vi/c%C3%A1ch-h%E1%BB%8Dc-ng%C3%B4n-ng%E1%BB%AF-k%C3%BD-hi%E1%BB%87u/"
+                               style="font-weight: bold;font-family: 'Playfair Display', serif;font-size: 22px;"><span
+                                    style="color: rgb(33, 37, 41);">Cách học ngôn ngữ ký hiệu</span></a></h4>
+                        <p class="description" style="font-family: Lora, serif;font-size: 16px;font-style: italic;"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+<section class="services section-bg" id="services-6" style="background: #e6f5fc;margin-top: -64px;">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title" style="padding-bottom: 0px;"><h2></h2>
+            <p style="font-family: Merriweather, serif;"><strong><span
+                    style="color: rgb(33, 37, 41); background-color: rgb(230, 245, 252);">Bài hát</span></strong></p>
+        </div>
+        <section class="services section-bg" id="services-7"
+                 style="background: rgba(255,255,255,0);margin-bottom: 2px;padding-bottom: 0px;">
+            <div class="row" style="margin-left: -16px;padding-right: 0px;margin-right: -26px;">
+                <div class="col-md-6 col-lg-3 col-xl-5 d-flex align-items-stretch" data-aos="zoom-in"
+                     data-aos-delay="300" style="width: 437px;margin-left: -5px;">
+                    <div class="icon-box" style="padding-bottom: 52px;margin-bottom: 78px;">
+                        <div class="icon" style="width: 370px;height: 200px;border-radius: 15px;padding-right: 11px;">
+                            <picture style="width: 370px;border-radius: 15px;"><img height="80" src="/static/img/document/NYCTV.png"
+                                                                                    style="width: 370px;height: 230px;border-radius: 15px;"
+                                                                                    width="100">
+                            </picture>
+                        </div>
+                        <h4 class="title"
+                            style="font-weight: bold;padding-bottom: 22px;padding-top: 24px;margin-top: 17px;margin-bottom: -32px;">
+                            <a href="https://youtu.be/59oywtLlcRU"
+                               style="font-weight: bold;font-family: 'Playfair Display', serif;font-size: 22px;"><span
+                                    style="color: rgb(33, 37, 41);">Nơi ấy con tìm về</span></a></h4>
+                        <p class="description" style="font-family: Lora, serif;font-size: 16px;font-style: italic;"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 col-xl-5 d-flex align-items-stretch" data-aos="zoom-in"
+                     data-aos-delay="300" style="width: 437px;margin-left: -5px;">
+                    <div class="icon-box" style="padding-bottom: 52px;margin-bottom: 78px;">
+                        <div class="icon" style="width: 370px;height: 200px;border-radius: 15px;padding-right: 11px;">
+                            <picture style="width: 370px;border-radius: 15px;"><img height="80" src="/static/img/document/SNNDH.png"
+                                                                                    style="width: 370px;height: 230px;border-radius: 15px;"
+                                                                                    width="100">
+                            </picture>
+                        </div>
+                        <h4 class="title"
+                            style="font-weight: bold;padding-bottom: 22px;padding-top: 24px;margin-top: 17px;margin-bottom: -32px;">
+                            <a href="https://youtu.be/DYmQwqdGIWI"
+                               style="font-weight: bold;font-family: 'Playfair Display', serif;font-size: 22px;"><span
+                                    style="color: rgb(33, 37, 41);">Sống như những đóa hoa</span></a></h4>
+                        <p class="description" style="font-family: Lora, serif;font-size: 16px;font-style: italic;"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 col-xl-5 d-flex align-items-stretch" data-aos="zoom-in"
+                     data-aos-delay="300" style="width: 437px;margin-left: -5px;">
+                    <div class="icon-box" style="padding-bottom: 52px;margin-bottom: 78px;">
+                        <div class="icon" style="width: 370px;height: 200px;border-radius: 15px;padding-right: 11px;">
+                            <picture style="width: 370px;border-radius: 15px;"><img height="80" src="/static/img/document/HB.png"
+                                                                                    style="width: 370px;height: 230px;border-radius: 15px;"
+                                                                                    width="100">
+                            </picture>
+                        </div>
+                        <h4 class="title"
+                            style="font-weight: bold;padding-bottom: 22px;padding-top: 24px;margin-top: 17px;margin-bottom: -32px;">
+                            <a href="https://youtu.be/de0oH9uaTvI"
+                               style="font-weight: bold;font-family: 'Playfair Display', serif;font-size: 22px;"><span
+                                    style="color: rgb(33, 37, 41);">Happy Birthday</span></a></h4>
+                        <p class="description" style="font-family: Lora, serif;font-size: 16px;font-style: italic;"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 col-xl-5 d-flex align-items-stretch" data-aos="zoom-in"
+                     data-aos-delay="300" style="width: 437px;margin-left: -5px;">
+                    <div class="icon-box" style="padding-bottom: 52px;margin-bottom: 78px;">
+                        <div class="icon" style="width: 370px;height: 200px;border-radius: 15px;padding-right: 11px;">
+                            <picture style="width: 370px;border-radius: 15px;"><img height="80" src="/static/img/document/MHWGO.png"
+                                                                                    style="width: 370px;height: 230px;border-radius: 15px;"
+                                                                                    width="100">
+                            </picture>
+                        </div>
+                        <h4 class="title"
+                            style="font-weight: bold;padding-bottom: 22px;padding-top: 24px;margin-top: 17px;margin-bottom: -32px;">
+                            <a href="https://youtu.be/-6Xzz8jOpBI"
+                               style="font-weight: bold;font-family: 'Playfair Display', serif;font-size: 22px;"><span
+                                    style="color: rgb(33, 37, 41);">My heart will go on</span></a></h4>
+                        <p class="description" style="font-family: Lora, serif;font-size: 16px;font-style: italic;"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 col-xl-5 d-flex align-items-stretch" data-aos="zoom-in"
+                     data-aos-delay="300" style="width: 437px;margin-left: -5px;">
+                    <div class="icon-box" style="padding-bottom: 52px;margin-bottom: 78px;">
+                        <div class="icon" style="width: 370px;height: 200px;border-radius: 15px;padding-right: 11px;">
+                            <picture style="width: 370px;border-radius: 15px;"><img height="80" src="/static/img/document/HMH.png"
+                                                                                    style="width: 370px;height: 230px;border-radius: 15px;"
+                                                                                    width="100">
+                            </picture>
+                        </div>
+                        <h4 class="title"
+                            style="font-weight: bold;padding-bottom: 22px;padding-top: 24px;margin-top: 17px;margin-bottom: -32px;">
+                            <a href="https://youtu.be/8fXtGS98ihM"
+                               style="font-weight: bold;font-family: 'Playfair Display', serif;font-size: 22px;"><span
+                                    style="color: rgb(33, 37, 41);">Hai mươi hai</span></a></h4>
+                        <p class="description" style="font-family: Lora, serif;font-size: 16px;font-style: italic;"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 col-xl-5 d-flex align-items-stretch" data-aos="zoom-in"
+                     data-aos-delay="300" style="width: 437px;margin-left: -5px;">
+                    <div class="icon-box" style="padding-bottom: 52px;margin-bottom: 78px;">
+                        <div class="icon" style="width: 370px;height: 200px;border-radius: 15px;padding-right: 11px;">
+                            <picture style="width: 370px;border-radius: 15px;"><img height="80" src="/static/img/document/UMCM.png"
+                                                                                    style="width: 370px;height: 230px;border-radius: 15px;"
+                                                                                    width="100">
+                            </picture>
+                        </div>
+                        <h4 class="title"
+                            style="font-weight: bold;padding-bottom: 22px;padding-top: 24px;margin-top: 17px;margin-bottom: -32px;">
+                            <a href="https://www.youtube.com/watch?v=CUztUo7AQZY"
+                               style="font-weight: bold;font-family: 'Playfair Display', serif;font-size: 22px;"><span
+                                    style="color: rgb(33, 37, 41);">Ước mơ của mẹ</span></a></h4>
+                        <p class="description" style="font-family: Lora, serif;font-size: 16px;font-style: italic;"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+<section class="services section-bg" id="services-4" style="background: rgb(255,255,255);margin-top: -61px;">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title" style="margin-bottom: -30px;"><h2></h2>
+            <p style="font-family: Merriweather, serif;"><strong><span
+                    style="color: rgb(33, 37, 41); background-color: rgb(230, 245, 252);">Truyện, thơ,...</span></strong>
+            </p></div>
+        <section class="services section-bg" id="services-5"
+                 style="background: rgba(255,255,255,0);margin-bottom: 2px;padding-bottom: 0px;">
+            <div class="row" style="margin-left: -16px;padding-right: 0px;margin-right: -26px;">
+                <div class="col-md-6 col-lg-3 col-xl-5 d-flex align-items-stretch" data-aos="zoom-in"
+                     data-aos-delay="300" style="width: 437px;margin-left: -5px;">
+                    <div class="icon-box" style="padding-bottom: 52px;margin-bottom: 78px;">
+                        <div class="icon" style="width: 370px;height: 200px;border-radius: 15px;padding-right: 11px;">
+                            <picture style="width: 370px;border-radius: 15px;"><img height="80" src="/static/img/document/TG.png"
+                                                                                    style="width: 370px;height: 230px;border-radius: 15px;"
+                                                                                    width="100">
+                            </picture>
+                        </div>
+                        <h4 class="title"
+                            style="font-weight: bold;padding-bottom: 22px;padding-top: 24px;margin-top: 17px;margin-bottom: -32px;">
+                            <a href="https://youtu.be/3b4w3TUCvSY"
+                               style="font-weight: bold;font-family: 'Playfair Display', serif;font-size: 22px;"><span
+                                    style="color: rgb(33, 37, 41);">Tháng Gióng</span></a></h4>
+                        <p class="description"
+                           style="font-family: Lora, serif;font-size: 16px;font-style: italic;padding-top: 22px;margin-bottom: -17px;">
+                            Truyện</p>
+                        <p class="description" style="font-family: Lora, serif;font-size: 16px;font-style: italic;"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 col-xl-5 d-flex align-items-stretch" data-aos="zoom-in"
+                     data-aos-delay="300" style="width: 437px;margin-left: -5px;">
+                    <div class="icon-box" style="padding-bottom: 52px;margin-bottom: 78px;">
+                        <div class="icon" style="width: 370px;height: 200px;border-radius: 15px;padding-right: 11px;">
+                            <picture style="width: 370px;border-radius: 15px;"><img height="80" src="/static/img/document/CCBD.png"
+                                                                                    style="width: 370px;height: 230px;border-radius: 15px;"
+                                                                                    width="100">
+                            </picture>
+                        </div>
+                        <h4 class="title"
+                            style="font-weight: bold;padding-bottom: 22px;padding-top: 24px;margin-top: 17px;margin-bottom: -32px;">
+                            <a href="https://youtu.be/Fu7RVQonBn8"
+                               style="font-weight: bold;font-family: 'Playfair Display', serif;font-size: 22px;"><span
+                                    style="color: rgb(33, 37, 41);">Câu chuyện bó đũa</span></a></h4>
+                        <p class="description"
+                           style="font-family: Lora, serif;font-size: 16px;font-style: italic;padding-top: 22px;margin-bottom: -17px;">
+                            Truyện</p>
+                        <p class="description" style="font-family: Lora, serif;font-size: 16px;font-style: italic;"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 col-xl-5 d-flex align-items-stretch" data-aos="zoom-in"
+                     data-aos-delay="300" style="width: 437px;margin-left: -5px;">
+                    <div class="icon-box" style="padding-bottom: 52px;margin-bottom: 78px;">
+                        <div class="icon" style="width: 370px;height: 200px;border-radius: 15px;padding-right: 11px;">
+                            <picture style="width: 370px;border-radius: 15px;"><img height="80" src="/static/img/document/CBBD.png"
+                                                                                    style="width: 370px;height: 230px;border-radius: 15px;"
+                                                                                    width="100">
+                            </picture>
+                        </div>
+                        <h4 class="title"
+                            style="font-weight: bold;padding-bottom: 22px;padding-top: 24px;margin-top: 17px;margin-bottom: -32px;">
+                            <a href="https://youtu.be/I2tDpZS6pDY"
+                               style="font-weight: bold;font-family: 'Playfair Display', serif;font-size: 22px;"><span
+                                    style="color: rgb(33, 37, 41);">Cô bé bán diêm</span></a></h4>
+                        <p class="description"
+                           style="font-family: Lora, serif;font-size: 16px;font-style: italic;padding-top: 22px;margin-bottom: -17px;">
+                            Truyện</p>
+                        <p class="description" style="font-family: Lora, serif;font-size: 16px;font-style: italic;"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 col-xl-5 d-flex align-items-stretch" data-aos="zoom-in"
+                     data-aos-delay="300" style="width: 437px;margin-left: -5px;">
+                    <div class="icon-box" style="padding-bottom: 52px;margin-bottom: 78px;">
+                        <div class="icon" style="width: 370px;height: 200px;border-radius: 15px;padding-right: 11px;">
+                            <picture style="width: 370px;border-radius: 15px;"><img height="80" src="/static/img/document/TC.png"
+                                                                                    style="width: 370px;height: 230px;border-radius: 15px;"
+                                                                                    width="100">
+                            </picture>
+                        </div>
+                        <h4 class="title"
+                            style="font-weight: bold;padding-bottom: 22px;padding-top: 24px;margin-top: 17px;margin-bottom: -32px;">
+                            <a href="https://youtu.be/rYMAOwfBIU8"
+                               style="font-weight: bold;font-family: 'Playfair Display', serif;font-size: 22px;"><span
+                                    style="color: rgb(33, 37, 41);">Tích Chu</span></a></h4>
+                        <p class="description"
+                           style="font-family: Lora, serif;font-size: 16px;font-style: italic;padding-top: 22px;margin-bottom: -17px;">
+                            Truyện</p></div>
+                </div>
+                <div class="col-md-6 col-lg-3 col-xl-5 d-flex align-items-stretch" data-aos="zoom-in"
+                     data-aos-delay="300" style="width: 437px;margin-left: -5px;">
+                    <div class="icon-box" style="padding-bottom: 52px;margin-bottom: 78px;">
+                        <div class="icon" style="width: 370px;height: 200px;border-radius: 15px;padding-right: 11px;">
+                            <picture style="width: 370px;border-radius: 15px;"><img height="80" src="/static/img/document/NCC.png"
+                                                                                    style="width: 370px;height: 230px;border-radius: 15px;"
+                                                                                    width="100">
+                            </picture>
+                        </div>
+                        <h4 class="title"
+                            style="font-weight: bold;padding-bottom: 22px;padding-top: 24px;margin-top: 17px;margin-bottom: -32px;">
+                            <a href="https://youtu.be/fI3loPmZMLY"
+                               style="font-weight: bold;font-family: 'Playfair Display', serif;font-size: 22px;"><span
+                                    style="color: rgb(33, 37, 41);">Nhổ củ cải</span></a></h4>
+                        <p class="description"
+                           style="font-family: Lora, serif;font-size: 16px;font-style: italic;padding-top: 22px;margin-bottom: -17px;">
+                            Truyện</p>
+                        <p class="description" style="font-family: Lora, serif;font-size: 16px;font-style: italic;"></p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 col-xl-5 d-flex align-items-stretch" data-aos="zoom-in"
+                     data-aos-delay="300" style="width: 437px;margin-left: -5px;">
+                    <div class="icon-box" style="padding-bottom: 52px;margin-bottom: 78px;">
+                        <div class="icon" style="width: 370px;height: 200px;border-radius: 15px;padding-right: 11px;">
+                            <picture style="width: 370px;border-radius: 15px;"><img height="80" src="/static/img/document/LA.png"
+                                                                                    style="width: 370px;height: 230px;border-radius: 15px;"
+                                                                                    width="100">
+                            </picture>
+                        </div>
+                        <h4 class="title"
+                            style="font-weight: bold;padding-bottom: 22px;padding-top: 24px;margin-top: 17px;margin-bottom: -32px;">
+                            <a href="https://youtu.be/JCK29NbNtUg"
+                               style="font-weight: bold;font-family: 'Playfair Display', serif;font-size: 22px;"><span
+                                    style="color: rgb(33, 37, 41);">Làm anh</span></a></h4>
+                        <p class="description"
+                           style="font-family: Lora, serif;font-size: 16px;font-style: italic;padding-top: 22px;margin-bottom: -17px;">
+                            Thơ</p>
+                        <p class="description" style="font-family: Lora, serif;font-size: 16px;font-style: italic;"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+{% endblock %}

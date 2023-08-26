@@ -1,0 +1,114 @@
+{% extends 'base_course.html' %}
+
+{% block title %} Video {% endblock %}
+
+{% block login_buttons %}
+    {% if session.user_is_logged_in %}
+        <a class="btn btn-primary" href="{{ url_for('logout_page') }}" role="button"
+           style="font-size: 14px;font-family: Inter, sans-serif;border-radius: 10px;margin-left: -1px;padding-left: 9px;padding-right: 10px;color: rgb(255,255,255);">
+            Đăng xuất
+        </a>
+    {% else %}
+        {{ super() }} <!-- Giữ nguyên nội dung của block cha (base.html) -->
+    {% endif %}
+{% endblock %}
+
+{% block main %}
+<main class="main" id="main" style="background: rgba(214,228,255,0.72);margin-top: -5px;">
+    <!-- Start: Navbar With Button -->
+    <nav class="navbar navbar-expand-md bg-body py-3"
+         style="background: linear-gradient(#6ea6f3, #6ea6f3), rgb(110,166,243);border-radius: 15px;padding-top: 23px;margin-top: 1px;margin-bottom: 1px;height: 63px;">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#" style="padding-left: 2px;">
+            <svg fill="none" height="1em" style="font-size: 33px;color: rgb(255,255,255);padding-right: 0px;margin-bottom: 0px;padding-bottom: 3px;margin-right: 7px;" viewBox="0 0 24 24" width="1em"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd" d="M8.20348 2.00378C9.46407 2.00378 10.5067 3.10742 10.6786 4.54241L19.1622 13.0259L11.384 20.8041C10.2124 21.9757 8.31291 21.9757 7.14134 20.8041L2.8987 16.5615C1.72713 15.3899 1.72713 13.4904 2.8987 12.3188L5.70348 9.51404V4.96099C5.70348 3.32777 6.82277 2.00378 8.20348 2.00378ZM8.70348 4.96099V6.51404L7.70348 7.51404V4.96099C7.70348 4.63435 7.92734 4.36955 8.20348 4.36955C8.47963 4.36955 8.70348 4.63435 8.70348 4.96099ZM8.70348 10.8754V9.34247L4.31291 13.733C3.92239 14.1236 3.92239 14.7567 4.31291 15.1473L8.55555 19.3899C8.94608 19.7804 9.57924 19.7804 9.96977 19.3899L16.3337 13.0259L10.7035 7.39569V10.8754C10.7035 10.9184 10.7027 10.9612 10.7012 11.0038H8.69168C8.69941 10.9625 8.70348 10.9195 8.70348 10.8754Z"
+                      fill="currentColor"
+                      fill-rule="evenodd"></path>
+                <path d="M16.8586 16.8749C15.687 18.0465 15.687 19.946 16.8586 21.1175C18.0302 22.2891 19.9297 22.2891 21.1013 21.1175C22.2728 19.946 22.2728 18.0465 21.1013 16.8749L18.9799 14.7536L16.8586 16.8749Z"
+                      fill="currentColor"></path>
+            </svg>
+            <span style="font-family: 'Alfa Slab One', serif;font-size: 23px;color: rgb(255,255,255)"> {{ topic_name }} </span></a>
+            <button class="navbar-toggler" data-bs-target="#navcol-1" data-bs-toggle="collapse"><span
+                    class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#"></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"></a></li>
+                </ul>
+                {% if language == 'vn' %}
+                    <a class="btn btn-primary" href="{{ url_for('course_page_vn') }}"
+                       role="button"
+                       style="background: rgba(0,0,0,0);font-family: Raleway, sans-serif;font-size: 33px;font-weight: bold;border-color: rgba(255,255,255,0);color: rgb(255,255,255);padding-left: 4px;margin-top: 6px;padding-right: 0px;margin-right: 10px;">X</a>
+                {% elif language == 'en' %}
+                    <a class="btn btn-primary" href="{{ url_for('course_page_en') }}"
+                       role="button"
+                       style="background: rgba(0,0,0,0);font-family: Raleway, sans-serif;font-size: 33px;font-weight: bold;border-color: rgba(255,255,255,0);color: rgb(255,255,255);padding-left: 4px;margin-top: 6px;padding-right: 0px;margin-right: 10px;">X</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav><!-- End: Navbar With Button -->
+    <div>
+        <h1 style="text-align: center;font-size: 19px;font-family: Merriweather, serif;margin-bottom: 0px;margin-top: 13px;padding-top: 4px;">{{ current_index }}/{{ total_videos }} từ đã học</h1></div>
+    <section class="section dashboard">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row" style="padding-right: 0;margin-right: -166px;">
+                    <div class="col-12">
+                        <div class="card" style="border-radius: 15PX;">
+                            <div class="card-body" style="border-radius: 100px;">
+                                <h4 class="card-title" style="text-align: center;font-family: Lora, serif;font-size: 24px;font-weight: bold;">{{ video['title'] }}</h4>
+                                <h6 class="text-muted card-subtitle mb-2" style="text-align: center;">Loại từ: {{ video['type'] }}</h6>
+                                <p class="card-text"></p></div>
+                        </div>
+                        <div class="card" style="border-radius: 15PX;">
+                            <div class="card-body"
+                                 style="border-radius: 15px; display: flex; justify-content: center; align-items: center">
+                                <iframe src="{{ video['url'] }}" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4"
+                 style="height: 200px;width: 305px;margin-right: -12px;padding-right: 19px;padding-left: 164px;margin-left: 39px;">
+                <div style="height: 154.4px;">
+                    {% if next_video_id %}
+                    <div class="card d-xxl-flex justify-content-xxl-center" style="border-radius: 15px;box-shadow: 3px 3px 6px rgb(1,43,67);">
+                        <a href="{{ url_for('video', video_id=next_video_id) }}">
+                            <div class="card-body" style="background: rgba(54,131,239,0.72);border-radius: 15px;height: 100px;">
+                                <div class="d-xl-flex justify-content-xl-end" style="height: 48px;">
+                                    <svg class="bi bi-chevron-double-right" fill="currentColor" height="1em" style="font-size: 64px;color: rgb(255,255,255);" viewBox="0 0 16 16" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" fill-rule="evenodd"></path>
+                                        <path d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" fill-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <h6 class="text-muted card-subtitle mb-2"></h6>
+                                <p class="card-text"></p>
+                            </div>
+                        </a>
+                    </div>
+                    {% endif %}
+
+                    {% if prev_video_id %}
+                    <div class="card d-xxl-flex justify-content-xxl-center" style="border-radius: 15px;box-shadow: 3px 3px 6px rgb(1,43,67);padding-left: 0px;margin-left: 0px;">
+                        <a href="{{ url_for('video', video_id=prev_video_id) }}">
+                            <div class="card-body" style="background: rgb(255,255,255);border-radius: 15px;">
+                                <div class="d-xl-flex justify-content-xl-end justify-content-xxl-start" style="text-align: left;">
+                                    <svg class="bi bi-chevron-double-left" fill="currentColor" height="1em" style="font-size: 48px;color: #6ea6f3;text-align: left;width: 64px;height: 64px;" viewBox="0 0 16 16" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" fill-rule="evenodd"></path>
+                                        <path d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" fill-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <h6 class="text-muted card-subtitle mb-2"></h6>
+                                <p class="card-text"></p>
+                            </div>
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %} Đăng nhập {% endblock %}
+
+{% block login_buttons %}
+    {% if session.user_is_logged_in %}
+        <a class="btn btn-primary" href="{{ url_for('logout_page') }}" role="button"
+           style="font-size: 14px;font-family: Inter, sans-serif;border-radius: 10px;margin-left: -1px;padding-left: 9px;padding-right: 10px;color: rgb(255,255,255);">
+            Đăng xuất
+        </a>
+    {% else %}
+        {{ super() }} <!-- Giữ nguyên nội dung của block cha (base.html) -->
+    {% endif %}
+{% endblock %}
+
+{% block main %}
+<section class="py-5">
+    <div class="container py-5">
+        <div class="row mb-4 mb-lg-5">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <p class="fw-bold text-success mb-2" style="font-family: Lora, serif;">Signlingo</p>
+                <h2 class="fw-bold" style="font-family: Merriweather, serif;">Đăng nhập</h2>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6 col-xl-4">
+                <div class="card">
+                    <div class="card-body text-center d-flex flex-column align-items-center">
+                        <div class="bs-icon-xl bs-icon-circle bs-icon-primary shadow bs-icon my-4">
+                            <svg class="bi bi-person" fill="currentColor" height="1em" viewBox="0 0 16 16"
+                                 width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"></path>
+                            </svg>
+                        </div>
+                        <form data-bs-theme="light" method="post">
+                            <div class="mb-3"><input class="form-control" name="email" placeholder="Mail đăng nhập"
+                                                     style="font-family: Lora, serif;" type="email">
+                            </div>
+                            <div class="mb-3"><input class="form-control" name="password" placeholder="Mật khẩu"
+                                                     style="font-family: Lora, serif;" type="password"></div>
+                            <span id="errorMessage" style="color: red;"> {{ error }} </span>
+                            <div class="mb-3">
+                                <button class="btn btn-primary shadow d-block w-100" style="font-family: Lora, serif;"
+                                        type="submit">Đăng nhập
+                                </button>
+                            </div>
+                        </form>
+                        <p class="text-muted" style="font-size: 13px;">
+                            <a href="{{ url_for('forgot_password') }}" style="text-decoration: underline;">Quên mật khẩu?</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

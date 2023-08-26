@@ -1,0 +1,56 @@
+{% extends 'base_course.html' %}
+
+{% block title %} Camera {% endblock %}
+
+{% block login_buttons %}
+    {% if session.user_is_logged_in %}
+        <a class="btn btn-primary" href="{{ url_for('logout_page') }}" role="button"
+           style="font-size: 14px;font-family: Inter, sans-serif;border-radius: 10px;margin-left: -1px;padding-left: 9px;padding-right: 10px;color: rgb(255,255,255);">
+            Đăng xuất
+        </a>
+    {% else %}
+        {{ super() }}
+    {% endif %}
+{% endblock %}
+
+{% block main %}
+<style>
+    .glass-effect {
+        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, .15);
+        backdrop-filter: blur(5px);
+}
+
+</style>
+<main class="main" id="main">
+    <div class="pagetitle">
+        <h1 style="font-family: Merriweather, serif;">Kiểm tra ký hiệu</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{{ url_for('home_page') }}"><span>Trang chủ</span></a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="{{ url_for('course_page_vn') }}"><span>Khoá học</span></a>
+                </li>
+                <li class="breadcrumb-item active">Kiểm tra ký hiệu</li>
+            </ol>
+        </nav>
+    </div>
+    <section style="margin: 20px">
+        <div style="display: flex; flex-direction: column; align-items: center; position: relative;">
+            <span id="result-display" class="btn btn-outline-primary btn-lg btn-block" style="justify-content: center; font-weight: bold; width: 600px; margin-bottom: 10px">Kết quả: <span id="result"></span></span>
+            <video  id="camera-stream" style="margin-bottom: 20px; transform: scaleX(-1); border: 3px solid lightblue; background-color: black;" width="1280" height="720" autoplay muted></video>
+            <div class="glass-effect" style="height: 70px; width: 70px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; justify-content: center; align-items: center">
+                <span id="countdown" style="font-size: 24px; font-weight: bold"></span>
+            </div>
+            <button id="predict-button" class="btn btn-outline-primary">Dự đoán</button>
+        </div>
+    </section>
+</main>
+<a class="d-flex justify-content-center align-items-center back-to-top" href="#"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+<script src="/static/js/video.js"></script>
+{% endblock %}

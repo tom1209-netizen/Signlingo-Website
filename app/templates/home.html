@@ -1,0 +1,220 @@
+{% extends 'base.html' %}
+
+{% block title %} Trang chủ {% endblock %}
+
+{% block login_buttons %}
+    {% if session.user_is_logged_in %}
+        <a class="btn btn-primary" href="{{ url_for('logout_page') }}" role="button"
+           style="font-size: 14px;font-family: Inter, sans-serif;border-radius: 10px;margin-left: -1px;padding-left: 9px;padding-right: 10px;color: rgb(255,255,255);">
+            Đăng xuất
+        </a>
+    {% else %}
+        {{ super() }} <!-- Giữ nguyên nội dung của block cha (base.html) -->
+    {% endif %}
+{% endblock %}
+
+{% block main %}
+    <section style="padding-top: 3px;background: url('/static/img/home/Blue Modern Business Presentation.png') center / cover no-repeat, rgb(230,245,252);padding-left: 2px;margin-top: -2px;padding-bottom: 0px;margin-bottom: -1px;">
+        <div class="container" style="margin-top: 187px;padding-bottom: 0px;margin-bottom: 219px;padding-top: 160px;color: rgb(52,141,219);">
+            <div class="text-white border-0 justify-content-center" style="margin-bottom: 67px;padding-bottom: 0px;">
+                <h2 class="fw-bold d-lg-flex justify-content-center justify-content-lg-center mb-3" style="font-family: Merriweather, serif;font-size: 66px;font-weight: bold;color: rgb(84,109,241);text-shadow: 3px 3px 0px rgb(120,70,66);"></h2>
+                <p class="d-lg-flex justify-content-lg-center mb-4" style="font-family: Lora, serif;color: rgb(0,0,0);">Học ngôn ngữ ký hiệu dễ dàng và hiệu quả!</p>
+                <div class="d-lg-flex justify-content-lg-center my-3"><a class="btn btn-primary btn-lg me-2" role="button" href="{{ url_for('course_page_vn') }}" style="font-size: 16px;font-family: Inter, sans-serif;background: rgb(13,110,253);color: rgb(255,255,255);">BẮT ĐẦU NGAY</a></div>
+            </div>
+        </div>
+    </section>
+    <header class="bg-primary-gradient" style="background: rgb(255,255,255);">
+        <div>
+            <!-- Start: Hero Clean Reverse -->
+            <div class="container pt-4 pt-xl-5" style="padding-top: 20px;">
+                <div>
+                    <section data-aos="fade-down" id="about" class="about" style="background: url('/static/img/home/Blue Modern Technology Business Presentation (1).png') center / contain no-repeat, rgba(255,255,255,0);padding-bottom: 565px;margin-bottom: 1px;margin-top: -40px;"></section>
+                    <div class="d-xl-flex justify-content-center justify-content-xl-start align-items-xl-center" style="padding-top: 0px;margin-bottom: -6px;margin-right: 294px;padding-right: 0px;margin-top: -149px;margin-left: 164px;padding-left: 32px;"><a class="btn btn-outline-dark" role="button" style="font-family: Lora, serif;font-size: 16px;border: 1px dashed rgb(0,0,0);border-radius: 15PX;" href="/aboutus.html">Tìm hiểu thêm</a></div>
+                </div>
+            </div><!-- End: Hero Clean Reverse -->
+        </div>
+    </header>
+    <section>
+        <section id="services" class="services section-bg" style="background: rgb(230,245,252);margin-top: 55px;">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2></h2>
+                    <p style="font-family: Merriweather, serif;"><strong><span style="color: rgb(33, 37, 41); background-color: rgb(230, 245, 252);">Lý do bạn nên chọn Signlingo để học ngôn ngữ ký hiệu</span></strong></p>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-3 col-xl-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200" style="width: 440px;">
+                        <div class="icon-box" style="padding-bottom: 24px;margin-bottom: 77px;font-family: Lora, serif;font-size: 16px;height: 333px;width: 440px;">
+                            <div class="icon"><i class="bx bx-tachometer"></i><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-star">
+                                    <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
+                                </svg></div>
+                            <h4 class="title"><a href="" style="font-family: Lora, serif;font-weight: bold;"><strong><span style="color: rgb(33, 37, 41);">Tiện lợi</span></strong></a></h4>
+                            <p class="description" style="font-size: 15px;font-weight: bold;"><span style="color: rgba(33, 37, 41, 0.75);">Học mọi lúc mọi nơi, bất cứ khi nào bạn muốn.</span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 col-xl-5 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300" style="width: 440px;">
+                        <div class="icon-box" style="padding-bottom: 52px;margin-bottom: 78px;height: 333px;width: 440px;">
+                            <div class="icon"><i class="bx bx-world"></i></div>
+                            <h4 class="title"><a href="" style="font-weight: bold;font-family: Lora, serif;"><strong><span style="color: rgb(33, 37, 41);">Cá nhân hóa trải nghiệm học tập</span></strong></a></h4>
+                            <p class="description" style="font-family: Lora, serif;font-weight: bold;font-size: 16px;"><span style="color: rgb(119, 119, 119);">Kết hợp giữa AI (trí thông minh nhân tạo) và khoa học ngôn ngữ, tạo ra các bài học cá nhân hóa giúp bạn học ở đúng tiến độ và cấp độ phù hợp.</span></p>
+                        </div>
+                    </div>
+                    <div class="col" style="height: 333px;width: 440px;">
+                        <div class="icon-box" style="padding-bottom: 0px;margin-bottom: 103px;height: 333px;width: 440px;">
+                            <div class="icon"><i class="bx bx-file"></i></div>
+                            <h4 class="title"><a href="" style="font-family: Lora, serif;font-weight: bold;"><strong><span style="color: rgb(33, 37, 41);">Ghi nhớ nhanh hơn</span></strong></a></h4>
+                            <p class="description" style="font-size: 16px;font-weight: bold;font-family: Lora, serif;"><span style="color: rgba(33, 37, 41, 0.75);">Áp dụng các phương pháp học tập thông minh giúp bạn có thể ghi nhớ dễ dàng.</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section data-aos="zoom-in-down" id="about-2" class="about" style="background: url('/static/img/home/5.png') center / contain no-repeat, rgba(255,255,255,0);padding-bottom: 565px;padding-right: 0px;margin-bottom: 15px;padding-top: 71px;">
+            <div></div>
+        </section>
+    </section>
+    <section>
+        <section id="team" class="team" style="padding-top: 0px;margin-bottom: -81px;padding-bottom: 0px;">
+            <div class="container">
+                <div data-aos="fade-up" class="section-title">
+                    <h2></h2>
+                    <p style="font-family: Merriweather, serif;font-weight: bold;">Đội ngũ sáng lập</p>
+                </div>
+                <div class="row" style="margin-right: -368px;">
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="member" style="background: url('/static/img/team/Lê Phúc Khang.jpg') center / contain no-repeat;padding-right: 0px;padding-bottom: 0px;margin-bottom: 0px;height: 350px;">
+                            <div class="member-info" style="padding-bottom: 0px;padding-left: 0px;padding-top: 0px;margin-right: 51px;padding-right: 0px;width: 420px;">
+                                <div class="member-info-content">
+                                    <h4>Lê Phúc Khang</h4><span>Hacker</span>
+                                </div>
+                                <div class="social"><a href="https://www.facebook.com/fuong0107"><i class="bi bi-facebook"></i></a><a href="https://www.instagram.com/hfuongg._/"><i class="bi bi-instagram"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="member" style="height: 350px;background: url('/static/img/team/Cao Thị Hà Phương - Vice Head of Finance.jpg') center / contain no-repeat;margin-bottom: 31px;padding-bottom: 0px;padding-right: 0px;">
+                            <div class="member-info" style="padding-bottom: 0px;padding-left: 0px;padding-top: 0px;margin-right: 50px;padding-right: 0px;width: 420px;">
+                                <div class="member-info-content">
+                                    <h4>Cao Thị Hà Phương</h4><span>Hipster</span>
+                                </div>
+                                <div class="social"><a href="https://www.facebook.com/fuong0107"><i class="bi bi-facebook"></i></a><a href="https://www.instagram.com/hfuongg._/"><i class="bi bi-instagram"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="member" style="height: 350px;background: url('/static/img/team/Bùi Đình Tuấn Anh.jpg') bottom / cover no-repeat;margin-bottom: 31px;padding-bottom: 0px;padding-right: 0px;">
+                            <div class="member-info" style="padding-bottom: 0px;padding-left: 0px;padding-top: 0px;margin-right: 50px;padding-right: 0px;width: 420px;">
+                                <div class="member-info-content">
+                                    <h4>Bùi Đình Tuấn Anh</h4><span>Hacker</span>
+                                </div>
+                                <div class="social"><a href="https://www.facebook.com/profile.php?id=100069661115605"><i class="bi bi-facebook"></i></a><a href="https://www.instagram.com/bui.tuananhh"><i class="bi bi-instagram"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <section class="py-5 mt-5" style="padding-top: 0px;margin-top: 0px;">
+        <section id="faq" class="faq section-bg" style="background: #e6f5fc;">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2></h2>
+                    <p style="font-family: Merriweather, serif;font-weight: bold;">Câu hỏi thường gặp</p>
+                </div><ul class="faq-list">
+    <li>
+        <div class="collapsed question" data-bs-toggle="collapse" href="#faq1"><span style="font-family: Lora, serif;">Làm sao để biết mình có thực hiện cử chỉ đúng hay không?</span><i class="bi bi-chevron-down icon-show"></i><i class="icon-close bi bi-chevron-up"></i></div>
+        <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+            <p> Bạn có thể vào mục Khoá học và vào phần Kiểm tra kí hiệu. Khi bạn thực hiện kí hiệu thì trang web sẽ trả về kết quả ký hiệu mà nó nhận dạng được, từ đó bạn có thể biết được mình làm đúng hay không nè. </p>
+        </div>
+    </li>
+    <li>
+        <div class="collapsed question" data-bs-toggle="collapse" href="#faq2"><span style="font-family: Lora, serif;">Trí tuệ nhân tạo được ứng dụng vào việc nhận diện như thế nào?</span><i class="bi bi-chevron-down icon-show"></i><i class="icon-close bi bi-chevron-up"></i></div>
+        <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+            <p> Trong trang web này sử dụng model LSTM được huấn luyện từ toạ độ điểm từ thư viện mediapipe giúp nhận dạng được tọa độ các đốt tay, dáng người và khuôn mặt của bạn, từ đó đưa ra kết quả nhận diện chính xác. </p>
+        </div>
+    </li>
+    <li>
+        <div class="collapsed question" data-bs-toggle="collapse" href="#faq3"><span style="font-family: Lora, serif;">Tôi là người khiếm thính, tôi có thể học ngôn ngữ ký hiệu của nước khác để giao tiếp được không?</span><i class="bi bi-chevron-down icon-show"></i><i class="icon-close bi bi-chevron-up"></i></div>
+        <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+            <p> Có, người khiếm thính hoàn toàn có thể học ngôn ngữ ký hiệu của nước ngoài để giao tiếp. Ngôn ngữ ký hiệu, còn được gọi là ngôn ngữ cử chỉ, là một hệ thống giao tiếp sử dụng các biểu hiện cử chỉ, hình ảnh và các ký hiệu đặc biệt để truyền đạt ý nghĩa. Một số quốc gia có ngôn ngữ ký hiệu cụ thể cho người khiếm thính, nhưng một số ngôn ngữ ký hiệu cũng có thể được sử dụng ở nhiều quốc gia.Việc học ngôn ngữ ký hiệu của một nước ngoài có thể giúp bạn giao tiếp với người khiếm thính khác từ khắp nơi trên thế giới. Điều này đặc biệt hữu ích khi đi du lịch hoặc giao tiếp qua mạng với người từ các quốc gia khác đó nha. </p>
+        </div>
+    </li>
+    <li>
+        <div class="collapsed question" data-bs-toggle="collapse" href="#faq4"><span style="font-family: Lora, serif;">Tôi muốn đóng góp thêm tư liệu, tôi phải làm sao?</span><i class="bi bi-chevron-down icon-show"></i><i class="icon-close bi bi-chevron-up"></i></div>
+        <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+            <p> Bạn chỉ cần tự quay video của mình làm ngôn ngữ kí hiệu nào bạn muốn hoặc bất cứ nguồn tài liệu uy tín nào bạn tìm được và gửi về cho chúng mình qua email: signlingo.co@gmail.com. Thông tin chi tiết bạn có thể xem ở trang Đóng góp nhé. </p>
+        </div>
+    </li>
+    <li>
+        <div class="collapsed question" data-bs-toggle="collapse" href="#faq5"><span style="font-family: Lora, serif;">Cách tạo tài khoản học tập?</span><i class="bi bi-chevron-down icon-show"></i><i class="icon-close bi bi-chevron-up"></i></div>
+        <div id="faq5" class="collapse" data-bs-parent=".faq-list">
+            <p> Bạn vào mục Đăng ký ở góc phải phía trên màn hình và nhập vào các trường được yêu cầu. Bạn có thể lưu ý nhớ mật khẩu để thuận tiện hơn trong các lần đăng nhập sau này nha. </p>
+        </div>
+    </li>
+<!--                Loi -->
+    <li>
+        <div class="collapsed question" data-bs-toggle="collapse" href="#faq6"><span style="font-family: Lora, serif;">Tôi có một số vấn đề muốn được giải đáp trực tiếp, vậy thì tôi phải liên hệ với các bạn qua đâu?</span><i class="bi bi-chevron-down icon-show"></i><i class="icon-close bi bi-chevron-up"></i></div>
+        <div id="faq-6" class="collapse" data-bs-parent=".faq-list">
+            <p> Bạn có thể liên hệ trực tiếp với chúng tôi qua các thông tin được ghi ở mục "Về chúng tôi" nhé! </p>
+        </div>
+    </li>
+</ul>
+            </div>
+        </section>
+    </section><!-- Start: Contact Details -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-8 col-xl-6 text-center mx-auto">
+                    <p class="fw-bold text-success mb-2"></p>
+                    <h2 class="fw-bold" style="font-family: Merriweather, serif;">Liên hệ với chúng tôi</h2>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6 col-xl-4">
+                    <div>
+                        <form class="p-3 p-xl-4" method="post" data-bs-theme="light">
+                            <!-- Start: Success Example -->
+                            <div class="mb-3"><input class="form-control" type="text" id="name-1" name="name" placeholder="Name"></div><!-- End: Success Example -->
+                            <!-- Start: Error Example -->
+                            <div class="mb-3"><input class="form-control" type="email" id="email-1" name="email" placeholder="Email"></div><!-- End: Error Example -->
+                            <div class="mb-3"><textarea class="form-control" id="message-1" name="message" rows="6" placeholder="Message"></textarea></div>
+                            <div><button class="btn btn-primary shadow d-block w-100" type="submit" style="font-family: Lora, serif;font-weight: bold;">Send </button></div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xl-4 d-flex justify-content-center justify-content-xl-start">
+                    <div class="d-flex flex-wrap flex-md-column justify-content-md-start align-items-md-start h-100">
+                        <div class="d-flex align-items-center p-3">
+                            <div class="bs-icon-md bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon bs-icon-md"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-telephone">
+                                    <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"></path>
+                                </svg></div>
+                            <div class="px-2">
+                                <h6 class="fw-bold mb-0" style="font-family: Lora, serif;">Phone</h6>
+                                <p class="text-muted mb-0" style="font-family: Lora, serif;">+123456789</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center p-3">
+                            <div class="bs-icon-md bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon bs-icon-md"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-envelope">
+                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"></path>
+                                </svg></div>
+                            <div class="px-2">
+                                <h6 class="fw-bold mb-0" style="font-family: Lora, serif;">Email</h6>
+                                <p class="text-muted mb-0" style="font-family: Lora, serif;">signlingo.co@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center p-3">
+                            <div class="bs-icon-md bs-icon-circle bs-icon-primary shadow d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon bs-icon-md"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-facebook">
+                                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
+                                </svg></div>
+                            <div class="px-2">
+                                <h6 class="fw-bold mb-0" style="font-family: Lora, serif;">Facebook</h6>
+                                <p class="text-muted mb-0" style="font-family: Lora, serif;">facebook.com/abcxyz</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- End: Contact Details -->
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} Đóng góp {% endblock %}
+
+{% block login_buttons %}
+    {% if session.user_is_logged_in %}
+        <a class="btn btn-primary" href="{{ url_for('logout_page') }}" role="button"
+           style="font-size: 14px;font-family: Inter, sans-serif;border-radius: 10px;margin-left: -1px;padding-left: 9px;padding-right: 10px;color: rgb(255,255,255);">
+            Đăng xuất
+        </a>
+    {% else %}
+        {{ super() }} <!-- Giữ nguyên nội dung của block cha (base.html) -->
+    {% endif %}
+{% endblock %}
+
+{% block main %}
+<section class="py-5 mt-5" style="padding-top: 0px;margin-top: 0px;">
+    <section class="faq section-bg" id="faq"
+             style="background: rgba(230,245,252,0);
+                    margin-top: -113px;
+                    margin-bottom: -62px;
+                    padding-top: 7px;">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title"
+                 style="background: url('/static/img/Blue Modern Technology Business Presentation (1).png') center / cover no-repeat;margin-bottom: 1px;margin-top: 11px;padding-bottom: 669px;"></div>
+        </div>
+    </section>
+</section>
+{% endblock %}

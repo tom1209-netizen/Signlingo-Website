@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+
+{% block title %} Đăng ký {% endblock %}
+
+{% block login_buttons %}
+    {% if session.user_is_logged_in %}
+        <a class="btn btn-primary" href="{{ url_for('logout_page') }}" role="button"
+           style="font-size: 14px;font-family: Inter, sans-serif;border-radius: 10px;margin-left: -1px;padding-left: 9px;padding-right: 10px;color: rgb(255,255,255);">
+            Đăng xuất
+        </a>
+    {% else %}
+        {{ super() }} <!-- Giữ nguyên nội dung của block cha (base.html) -->
+    {% endif %}
+{% endblock %}
+
+{% block main %}
+
+<section class="py-5"
+         style="margin-top: 34px; margin-bottom: 74px; padding-top: 63px; display: flex; flex-direction: column; align-items: center;">
+    <div class="container py-5 st"
+         style="flex: 1 ;padding-bottom: 0px; padding-top: 35px; margin-top: -80px;">
+        <div class="row mb-4 mb-lg-5">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <p class="fw-bold text-success mb-2" style="font-family: Lora, serif;">Signlingo</p>
+                <h2 class="fw-bold" style="font-family: Merriweather, serif;">Đăng ký</h2>
+            </div>
+        </div>
+    </div>
+    <div style="flex: 1; display: flex; justify-content: center; align-items: center; margin-top: -50px">
+        <!-- Start: Ludens - Register -->
+        <div class="container bg-white shadow-lg" style="border-radius: 5px;">
+            <div class="p-5">
+                <div class="text-center">
+                    <h4 class="text-dark mb-4" style="font-weight: bold;">Tạo tài khoản mới</h4>
+                </div>
+                <!-- Start: Register Form -->
+                <form action="/signup" class="user" id="userForm" method="post">
+                    <div class="mb-3"><input class="form-control form-control-user" name="username"
+                                             placeholder="Tên đăng nhập"
+                                             required="" style="font-family: Lora, serif;"
+                                             type="text"></div><!-- End: Username -->
+                    <!-- Start: Email -->
+                    <div class="mb-3"><input class="form-control form-control-user" id="email" name="email"
+                                             placeholder="Email"
+                                             required="" style="font-family: Lora, serif;" type="email">
+                    </div><!-- End: Email --><!-- Start: Password -->
+                    <div class="row mb-3">
+                        <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user"
+                                                                  id="password"
+                                                                  name="password" placeholder="Mật khẩu"
+                                                                  required="" style="font-family: Lora, serif;"
+                                                                  type="password"></div>
+                        <div class="col-sm-6"><input class="form-control form-control-user" id="verifyPassword"
+                                                     placeholder="Nhập lại mật khẩu" required=""
+                                                     style="font-family: Lora, serif;" type="password"></div>
+                    </div><!-- End: Password --><!-- Start: Names -->
+                    <div class="row mb-3">
+                        <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user"
+                                                                  name="full_name"
+                                                                  placeholder="Họ và tên" required=""
+                                                                  style="font-family: Lora, serif;" type="text">
+                        </div>
+                        <div class="col-sm-6"><input class="form-control form-control-user" name="phone_number"
+                                                     placeholder="Số điện thoại"
+                                                     required="" style="font-family: Lora, serif;"
+                                                     type="text"></div>
+                    </div><!-- End: Names --><!-- Start: Email Error Message -->
+                    <div class="row mb-3" style="margin-bottom: 4px;margin-top: -18px;"><p class="text-danger"
+                                                                                           id="emailErrorMsg"
+                                                                                           style="display:none;">
+                        Paragraph</p>
+                        <p class="text-danger" id="passwordErrorMsg" style="display:none;">Paragraph</p></div>
+                    <span style="color: red"> {{ error }} </span>
+                    <span style="color: green"> {{ success }} </span>
+                    <button class="btn btn-primary d-block btn-user w-100" id="submitBtn"
+                            style="font-size: 18px;font-weight: bold;font-family: Lora, serif;"
+                            type="submit">Đăng ký
+                    </button>
+                    <hr>
+                </form>
+                <!-- ... (other form elements) ... -->
+            </div>
+        </div>
+        <!-- End: Ludens - Register -->
+    </div>
+</section>
+
+<script>
+    let email = document.getElementById("email")
+    let password = document.getElementById("password")
+    let verifyPassword = document.getElementById("verifyPassword")
+    let submitBtn = document.getElementById("submitBtn")
+    let emailErrorMsg = document.getElementById('emailErrorMsg')
+    let passwordErrorMsg = document.getElementById('passwordErrorMsg')
+
+    function displayErrorMsg(type, msg) {
+        if (type == "email") {
+            emailErrorMsg.style.display = "block"
+            emailErrorMsg.innerHTML = msg
+            submitBtn.disabled = true
+        } else {
+            passwordErrorMsg.style.display = "block"
+            passwordErrorMsg.innerHTML = msg
+            submitBtn.disabled = true
+        }
+    }
+
+    function hideErrorMsg(type) {
+        if (type == "email") {
+            emailErrorMsg.style.display = "none"
+            emailErrorMsg.innerHTML = ""
+            submitBtn.disabled = true
+            if (passwordErrorMsg.innerHTML == "")
+                submitBtn.disabled = false
+        } else {
+            passwordErrorMsg.style.display = "none"
+            passwordErrorMsg.innerHTML = ""
+            if (emailErrorMsg.innerHTML == "")
+                submitBtn.disabled = false
+        }
+    }
+
+    // Validate password upon change
+    password.addEventListener("change", function () {
+
+        // If password has no value, then it won't be changed and no error will be displayed
+        if (password.value.length == 0 && verifyPassword.value.length == 0) hideErrorMsg("password")
+
+        // If password has a value, then it will be checked. In this case the passwords don't match
+        else if (password.value !== verifyPassword.value) displayErrorMsg("password", "Passwords do not match")
+
+        // When the passwords match, we check the length
+        else {
+            // Check if the password has 8 characters or more
+            if (password.value.length >= 8)
+                hideErrorMsg("password")
+            else
+                displayErrorMsg("password", "Password must be at least 8 characters long")
+        }
+    })
+
+    verifyPassword.addEventListener("change", function () {
+        if (password.value !== verifyPassword.value)
+            displayErrorMsg("password", "Passwords do not match")
+        else {
+            // Check if the password has 8 characters or more
+            if (password.value.length >= 8)
+                hideErrorMsg("password")
+            else
+                displayErrorMsg("password", "Password must be at least 8 characters long")
+        }
+    })
+
+    // Validate email upon change
+    email.addEventListener("change", function () {
+        // Check if the email is valid using a regular expression (string@string.string)
+        if (email.value.match(/^[^@]+@[^@]+\.[^@]+$/))
+            hideErrorMsg("email")
+        else
+            displayErrorMsg("email", "Invalid email")
+    });
+</script>
+
+{% endblock %}
