@@ -125,13 +125,13 @@ Accuracy on test set: 90%
 Loss on test set: 33%
 ## Model architecture
 
-![](https://hackmd.io/_uploads/ryA1cUw63.png)
+![Model](model_image/model.png)
 
 ## Visualize accuracy and loss
 
-![](https://hackmd.io/_uploads/r12tBwwTn.png)
+![Train and valid graph](model_image/train_valid_graph.png)
 
 
 ## Confusion matrix
 
-![](https://hackmd.io/_uploads/ryVmSvvTn.png)
+![Confusion matrix](model_image/confusion_matrix.png)
