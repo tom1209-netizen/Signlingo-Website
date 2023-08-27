@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %} Thư viện {% endblock %}
+
+{% block login_buttons %}
+    {% if session.user_is_logged_in %}
+        <a class="btn btn-primary" href="{{ url_for('logout_page') }}" role="button"
+           style="font-size: 14px;font-family: Inter, sans-serif;border-radius: 10px;margin-left: -1px;padding-left: 9px;padding-right: 10px;color: rgb(255,255,255);">
+            Đăng xuất
+        </a>
+    {% else %}
+        {{ super() }} <!-- Giữ nguyên nội dung của block cha (base.html) -->
+    {% endif %}
+{% endblock %}
+
+{% block main %}
+<section class="py-5" style="margin-top: -64px;"><!-- Start: Features Cards -->
+    <div class="container py-5">
+        <div class="row mb-4 mb-lg-5">
+            <div class="col">
+                <div></div>
+            </div>
+            <div class="col-md-8 col-xl-6 text-center mx-auto"><p class="fw-bold text-success mb-2">Signlingo</p>
+                <h3 class="fw-bold">Thư viện</h3></div>
+            <div class="col">
+                <div></div>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
+            <div class="col mb-5">
+                <div style="background: url('/static/img/products/94aa5bf1b82ed7a21b28ef8680521900.jpg') bottom / cover no-repeat;margin-bottom: 23px;padding-bottom: 315px;"></div>
+            </div>
+            <div class="col d-md-flex align-items-md-end align-items-lg-center mb-5">
+                <div><h5 class="fw-bold">Tài liệu</h5>
+                    <p class="text-muted mb-4">Tài liệu hướng dẫn cách học và sử dụng ngôn ngữ ký kiệu, video,...</p>
+                    <a class="btn btn-primary shadow" role="button" href="{{ url_for('document_page') }}">Tìm hiểu thêm</a></div>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
+            <div class="col order-md-last mb-5"><img class="rounded img-fluid shadow"
+                                                     src="/static/img/products/CD8.jpg?h=3f798bd6ef24d1294fcda5c3e1245445">
+            </div>
+            <div class="col d-md-flex align-items-md-end align-items-lg-center mb-5">
+                <div><h5 class="fw-bold">Văn hóa - Xã hội</h5>
+                    <p class="text-muted mb-4">Khám phá văn hóa, xã hội và hoạt động của cộng đồng người khiếm thính.
+                        Các nhân vật truyền cảm hứng và tổ chức truyền lửa.</p>
+                    <a class="btn btn-primary shadow" role="button" href="{{ url_for('social_culture_page') }}">Tìm hiểu thêm</a>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
+            <div class="col mb-5"><img class="rounded img-fluid shadow"
+                                       src="/static/img/products/OIP.jpg?h=fc23543aac0ecad5a723ca8067d0bb1b"></div>
+            <div class="col d-md-flex align-items-md-end align-items-lg-center mb-5">
+                <div><h5 class="fw-bold">Cộng đồng trực tuyến</h5>
+                    <p class="text-muted mb-4">Danh sách các cộng đồng trực tuyến về ngôn ngữ ký hiệu</p>
+                    <a class="btn btn-primary shadow" role="button" href=" {{ url_for('communities_page') }} ">Tìm hiểu thêm</a>
+                </div>
+            </div>
+        </div>
+    </div><!-- End: Features Cards -->
+</section>
+
+{% endblock %}

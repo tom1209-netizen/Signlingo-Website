@@ -1,0 +1,199 @@
+{% extends 'base_course.html' %}
+
+{% block title %} Khoá học (EN) {% endblock %}
+
+{% block login_buttons %}
+    {% if session.user_is_logged_in %}
+        <a class="btn btn-primary" href="{{ url_for('logout_page') }}" role="button"
+           style="font-size: 14px;font-family: Inter, sans-serif;border-radius: 10px;margin-left: -1px;padding-left: 9px;padding-right: 10px;color: rgb(255,255,255);">
+            Đăng xuất
+        </a>
+    {% else %}
+        {{ super() }} <!-- Giữ nguyên nội dung của block cha (base.html) -->
+    {% endif %}
+{% endblock %}
+
+{% block main %}
+
+<!-- Main component of the web -->
+<main class="main" id="main" style="background: #f0fbfd;margin-top: -18px;">
+    <div class="pagetitle">
+        <h1 style="font-family: Merriweather, serif;font-size: 29px;text-align: center;margin-top: 37px;">Khóa học</h1>
+        <nav>
+            <ol class="breadcrumb" style="font-family: Lora, serif;text-align: center;font-size: 14px;">
+                <li class="breadcrumb-item">
+                    <a href="{{ url_for('home_page') }}"><span>Trang chủ</span></a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <span>Khóa học</span>
+                </li>
+            </ol>
+        </nav>
+    </div>
+    <section class="section dashboard"><!-- Start: 1 Row 3 Columns -->
+        <div class="container">
+            <div class="row" data-aos="fade-down"
+                 style="padding-bottom: 0px;margin-bottom: 19px;padding-top: 8px;margin-top: -5px;">
+                <div class="col-md-4" style="margin-bottom: 10px;padding-bottom: 0px;">
+                    <div class="card" data-aos="fade"
+                         style="background: #00000000;padding-bottom: 0px;border-radius: 15px;">
+                        <div class="card-body"
+                             style="margin-bottom: -3px;border-radius: 15px;box-shadow: 4px 5px 2px 0px rgb(126,138,239);background: var(--bs-body-bg);border-width: 1.5px;border-style: solid;">
+                            <h1 style="color: #3683ef;font-family: 'Alfa Slab One', serif;font-size: 27px;padding-bottom: 23px;margin-top: 9px;text-align: center;border-width: 0px;border-color: rgb(106,62,25);margin-bottom: -24px;">
+                                MÀU SẮC</h1>
+                            <div class="d-xl-flex justify-content-xl-center" style="padding-bottom: 19px;margin-top: 34px;">
+                                <a class="btn btn-outline-dark"
+                                   href="{{ url_for('video_by_topic', topic='Màu sắc', language='en') }}"
+                                   role="button"
+                                   style="font-family: Lora, serif;font-size: 16px;border: 1px dashed rgb(0,0,0);border-radius: 15PX;">Học ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" data-aos="fade"
+                         style="background: #00000000;padding-bottom: 0px;border-radius: 15px;">
+                        <div class="card-body"
+                             style="margin-bottom: -3px;border-radius: 15px;box-shadow: 4px 5px 2px 0px rgb(126,138,239);background: var(--bs-body-bg);border-width: 1.5px;border-style: solid;">
+                            <h1 style="color: #3683ef;font-family: 'Alfa Slab One', serif;font-size: 27px;padding-bottom: 23px;margin-top: 9px;text-align: center;border-width: 0px;border-color: rgb(106,62,25);margin-bottom: -24px;">
+                                TRÁI CÂY</h1>
+                            <div class="d-xl-flex justify-content-xl-center"
+                                 style="padding-bottom: 19px;margin-top: 34px;">
+                                <a class="btn btn-outline-dark"
+                                   href="{{ url_for('video_by_topic', topic='Trái cây', language='en') }}"
+                                   role="button"
+                                   style="font-family: Lora, serif;font-size: 16px;border: 1px dashed rgb(0,0,0);border-radius: 15PX;">Học ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" data-aos="fade"
+                         style="background: #00000000;padding-bottom: 0px;border-radius: 15px;">
+                        <div class="card-body"
+                             style="margin-bottom: -3px;border-radius: 15px;box-shadow: 4px 5px 2px 0px rgb(126,138,239);background: var(--bs-body-bg);border-width: 1.5px;border-style: solid;">
+                            <h1 style="color: #3683ef;font-family: 'Alfa Slab One', serif;font-size: 27px;padding-bottom: 23px;margin-top: 9px;text-align: center;border-width: 0px;border-color: rgb(106,62,25);margin-bottom: -24px;">
+                                THỨC ĂN</h1>
+                            <div class="d-xl-flex justify-content-xl-center"
+                                 style="padding-bottom: 19px;margin-top: 34px;">
+                                <a class="btn btn-outline-dark"
+                                   href="{{ url_for('video_by_topic', topic='Thức ăn', language='en') }}"
+                                   role="button"
+                                   style="font-family: Lora, serif;font-size: 16px;border: 1px dashed rgb(0,0,0);border-radius: 15PX;">Học ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" data-aos="fade-down"
+                 style="padding-bottom: 0px;margin-bottom: 19px;padding-top: 8px;margin-top: -5px;">
+                <div class="col-md-4" style="margin-bottom: 10px;padding-bottom: 0px;">
+                    <div class="card" data-aos="fade"
+                         style="background: #00000000;padding-bottom: 0px;border-radius: 15px;">
+                        <div class="card-body"
+                             style="margin-bottom: -3px;border-radius: 15px;box-shadow: 4px 5px 2px 0px rgb(126,138,239);background: var(--bs-body-bg);border-width: 1.5px;border-style: solid;">
+                            <h1 style="color: #3683ef;font-family: 'Alfa Slab One', serif;font-size: 27px;padding-bottom: 23px;margin-top: 9px;text-align: center;border-width: 0px;border-color: rgb(106,62,25);margin-bottom: -24px;">
+                                CÔNG VIỆC</h1>
+                            <div class="d-xl-flex justify-content-xl-center"
+                                 style="padding-bottom: 19px;margin-top: 34px;">
+                                <a class="btn btn-outline-dark"
+                                   href="{{ url_for('video_by_topic', topic='Công việc', language='en') }}"
+                                   role="button"
+                                   style="font-family: Lora, serif;font-size: 16px;border: 1px dashed rgb(0,0,0);border-radius: 15PX;">Học ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" data-aos="fade"
+                         style="background: #00000000;padding-bottom: 0px;border-radius: 15px;">
+                        <div class="card-body"
+                             style="margin-bottom: -3px;border-radius: 15px;box-shadow: 4px 5px 2px 0px rgb(126,138,239);background: var(--bs-body-bg);border-width: 1.5px;border-style: solid;">
+                            <h1 style="color: #3683ef;font-family: 'Alfa Slab One', serif;font-size: 27px;padding-bottom: 23px;margin-top: 9px;text-align: center;border-width: 0px;border-color: rgb(106,62,25);margin-bottom: -24px;">
+                                ĐỘNG VẬT</h1>
+                            <div class="d-xl-flex justify-content-xl-center"
+                                 style="padding-bottom: 19px;margin-top: 34px;">
+                                <a class="btn btn-outline-dark"
+                                   href="{{ url_for('video_by_topic', topic='Động vật', language='en') }}"
+                                   role="button"
+                                   style="font-family: Lora, serif;font-size: 16px;border: 1px dashed rgb(0,0,0);border-radius: 15PX;">Học ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" data-aos="fade"
+                         style="background: #00000000;padding-bottom: 0px;border-radius: 15px;">
+                        <div class="card-body"
+                             style="margin-bottom: -3px;border-radius: 15px;box-shadow: 4px 5px 2px 0px rgb(126,138,239);background: var(--bs-body-bg);border-width: 1.5px;border-style: solid;">
+                            <h1 style="color: #3683ef;font-family: 'Alfa Slab One', serif;font-size: 27px;padding-bottom: 23px;margin-top: 9px;text-align: center;border-width: 0px;border-color: rgb(106,62,25);margin-bottom: -24px;">
+                                THỜI GIAN</h1>
+                            <div class="d-xl-flex justify-content-xl-center"
+                                 style="padding-bottom: 19px;margin-top: 34px;">
+                                <a class="btn btn-outline-dark"
+                                   href="{{ url_for('video_by_topic', topic='Thời gian', language='en') }}"
+                                   role="button"
+                                   style="font-family: Lora, serif;font-size: 16px;border: 1px dashed rgb(0,0,0);border-radius: 15PX;">Học ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" data-aos="fade-down"
+                 style="padding-bottom: 0px;margin-bottom: 19px;padding-top: 8px;margin-top: -5px;">
+                <div class="col-md-4" style="margin-bottom: 10px;padding-bottom: 0px;">
+                    <div class="card" data-aos="fade"
+                         style="background: #00000000;padding-bottom: 0px;border-radius: 15px;">
+                        <div class="card-body"
+                             style="margin-bottom: -3px;border-radius: 15px;box-shadow: 4px 5px 2px 0px rgb(126,138,239);background: var(--bs-body-bg);border-width: 1.5px;border-style: solid;">
+                            <h1 style="color: #3683ef;font-family: 'Alfa Slab One', serif;font-size: 27px;padding-bottom: 23px;margin-top: 9px;text-align: center;border-width: 0px;border-color: rgb(106,62,25);margin-bottom: -24px;">
+                                GIA ĐÌNH</h1>
+                            <div class="d-xl-flex justify-content-xl-center"
+                                 style="padding-bottom: 19px;margin-top: 34px;">
+                                <a class="btn btn-outline-dark"
+                                   href="{{ url_for('video_by_topic', topic='Gia đình', language='en') }}"
+                                   role="button"
+                                   style="font-family: Lora, serif;font-size: 16px;border: 1px dashed rgb(0,0,0);border-radius: 15PX;">Học ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" data-aos="fade"
+                         style="background: #00000000;padding-bottom: 0px;border-radius: 15px;">
+                        <div class="card-body"
+                             style="margin-bottom: -3px;border-radius: 15px;box-shadow: 4px 5px 2px 0px rgb(126,138,239);background: var(--bs-body-bg);border-width: 1.5px;border-style: solid;">
+                            <h1 style="color: #3683ef;font-family: 'Alfa Slab One', serif;font-size: 27px;padding-bottom: 23px;margin-top: 9px;text-align: center;border-width: 0px;border-color: rgb(106,62,25);margin-bottom: -24px;">
+                                TOPIC NAME</h1>
+                            <div class="d-xl-flex justify-content-xl-center"
+                                 style="padding-bottom: 19px;margin-top: 34px;">
+                                <a class="btn btn-outline-dark"
+                                   href="#"
+                                   role="button"
+                                   style="font-family: Lora, serif;font-size: 16px;border: 1px dashed rgb(0,0,0);border-radius: 15PX;">Học ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" data-aos="fade"
+                         style="background: #00000000;padding-bottom: 0;border-radius: 15px;">
+                        <div class="card-body"
+                             style="margin-bottom: -3px;border-radius: 15px;box-shadow: 4px 5px 2px 0px rgb(126,138,239);background: var(--bs-body-bg);border-width: 1.5px;border-style: solid;">
+                            <h1 style="color: #3683ef;font-family: 'Alfa Slab One', serif;font-size: 27px;padding-bottom: 23px;margin-top: 9px;text-align: center;border-width: 0px;border-color: rgb(106,62,25);margin-bottom: -24px;">
+                                TOPIC NAME</h1>
+                            <div class="d-xl-flex justify-content-xl-center"
+                                 style="padding-bottom: 19px;margin-top: 34px;">
+                                <a class="btn btn-outline-dark"
+                                   href="#"
+                                   role="button"
+                                   style="font-family: Lora, serif;font-size: 16px;border: 1px dashed rgb(0,0,0);border-radius: 15PX;">Học ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End: 1 Row 3 Columns -->
+    </section>
+</main>
+{% endblock %}

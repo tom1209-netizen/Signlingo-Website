@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css"
+          rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <link href="{{ url_for('static', filename='/css/styles.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!--  Bootstrap icon  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <!--  Boxicon  -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+
+    <title>{% block title %}  {% endblock %}</title>
+</head>
+
+<body style="font-family: Lora, serif;"><!-- Start: Navbar Centered Links -->
+<nav class="navbar navbar-expand-md sticky-top navbar-shrink py-3 navbar-light" id="mainNav"
+     style="height: 71px;margin-top: -1px;padding-bottom: 32px;padding-top: 2px;margin-bottom: 0px;">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center"
+             style="padding-left: 0px;margin-right: -6px;padding-right: 0px;margin-left: -69px;"><a
+                class="navbar-brand d-flex align-items-center" href="{{ url_for('home_page') }}"
+                style="margin-top: -3px;padding: 0;margin-left: 64px;margin-right: 49px;"><img
+                src="/static/img/logo1.png" style="width: 60px;"><span
+                style="font-family: Inter, sans-serif;font-weight: bold;">Signlingo</span></a><i
+                class="bi bi-list toggle-sidebar-btn" style="font-size: 32px;"></i></div>
+        <div class="collapse navbar-collapse" id="navcol-2" style="padding-bottom: 0px;margin-bottom: -1px;">
+            <ul class="navbar-nav mx-auto" style="font-family: Inter, sans-serif;font-size: 15px;">
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('home_page') }}">Trang chủ</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('course_page_vn') }}">Khóa học</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('library_page') }}">Thư viện</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('faq_page') }}">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('contribution_page') }}"
+                                        style="font-family: Inter, sans-serif;">Đóng góp</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('about_page') }}">Về chúng tôi</a></li>
+                <li class="nav-item"></li>
+            </ul>
+            <div class="btn-group" role="group">
+                {% block login_buttons %}
+                    <a class="btn btn-primary"
+                       href="{{ url_for('login_page') }}"
+                       role="button"
+                       style="background: rgb(255,255,255);color: var(--bs-navbar-active-color);border-color: var(--bs-btn-border-color);font-family: Inter, sans-serif;font-size: 14px;border-radius: 10px;padding-left: 5px;padding-right: 5px;margin-right: 9px;">
+                        Đăng nhập
+                    </a>
+                    <a class="btn btn-primary"
+                       href="{{ url_for('signup_page') }}"
+                       role="button"
+                       style="font-size: 14px;font-family: Inter, sans-serif;border-radius: 10px;margin-left: -1px;padding-left: 9px;padding-right: 10px;color: rgb(255,255,255);">
+                        Đăng ký
+                    </a>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</nav><!-- End: Navbar Centered Links -->
+
+<aside class="sidebar" id="sidebar-1">
+    <ul class="sidebar-nav" id="sidebar-nav-1">
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('course_page_vn') }}"><span><i class="bi bi-grid"></i>Khóa học</span></a>
+        </li>
+        <li class="nav-item"><a class="nav-link collapsed" href="{{ url_for('quiz_home') }}"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-question-circle" style="margin-right: 8px;color: rgb(137,155,189);">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+                        <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"></path>
+                    </svg><span>Ôn tập</span></a></li>
+        <li class="nav-item"><a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse"
+                                href="#"><i class="bi bi-menu-button-wide"></i><span>Ngôn ngữ</span><i
+                class="ms-auto bi bi-chevron-down"></i></a>
+            <ul class="nav-content collapse" data-bs-parent="#sidebar-nav" id="components-nav">
+                <li><i class="bi"><a href="{{ url_for('course_page_vn') }}">Tiếng Việt</a></i></li>
+                <li><i class="bi"><a href="{{ url_for('course_page_en') }}">Tiếng Anh</a></i></li>
+                <li><i class="bi"><a href="#">Tiếng Nhật</a></i></li>
+            </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link collapsed" href="{{ url_for('ranking_page') }}"><i
+                class="bi bi-layout-text-window-reverse"></i><span>Bảng xếp hạng</span></a></li>
+        <li class="nav-item"><a class="nav-link collapsed" href="{{ url_for('chart_page') }}"><i class="bi bi-bar-chart"></i><span>Thống kê</span></a>
+        </li>
+        <li class="nav-item"><a class="nav-link collapsed" href="{{ url_for('camera_page') }}"><span><svg
+                class="bi bi-camera" fill="currentColor" height="1em" style="padding-right: 0px;margin-right: 10px;margin-bottom: 4px;" viewBox="0 0 16 16"
+                width="1em" xmlns="http://www.w3.org/2000/svg">
+  <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z"></path>
+  <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"></path>
+</svg>Kiểm tra ký hiệu</span></a></li>
+        <li class="nav-heading">Khác</li>
+        <li class="nav-item"><a class="nav-link collapsed" href="{{ url_for('user_page') }}"><i class="bi bi-person"></i><span>Hồ sơ</span></a>
+        </li>
+        <li class="nav-item"><a class="nav-link collapsed" href="{{ url_for('upgrade_page') }}"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person-up" style="margin-right: 8px;color: rgb(137,155,189);">
+            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.354-5.854 1.5 1.5a.5.5 0 0 1-.708.708L13 11.707V14.5a.5.5 0 0 1-1 0v-2.793l-.646.647a.5.5 0 0 1-.708-.708l1.5-1.5a.5.5 0 0 1 .708 0ZM11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"></path>
+            <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"></path>
+            </svg><span>Nâng cấp</span></a>
+        </li>
+        <li class="nav-item"><a class="nav-link collapsed" href="{{ url_for('login_page') }}"><i
+                class="bi bi-box-arrow-in-right"></i><span>Đăng nhập</span></a></li>
+    </ul>
+</aside>
+{% block main %}
+
+{% endblock %}
+
+<!-- Footer -->
+<footer id="footer" style="margin-left: -1px;margin-bottom: 3px;padding-bottom: 0;">
+    <div class="footer-top" style="font-family: Inter, sans-serif;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3 footer-contact"><a
+                        class="navbar-brand d-flex align-items-center justify-content-xl-center" href="{{ url_for('home_page') }}"
+                        style="padding-top: 0px;margin-top: 38px;width: 261px;"><img
+                        src="/static/img/logo1.png" style="width: 60px;"><span
+                        style="font-weight: bold;">Signlingo</span></a>
+                    <p style="text-align: center;"><br><strong>Số điện thoại:</strong>
+                        0981976880<br><strong>Email:</strong> signlingo.co@gmail.com<br></p>
+                </div>
+                <div class="col-md-6 col-lg-3 footer-links"><h4></h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i><a href="{{ url_for('home_page') }}">Trang chủ</a></li>
+                        <li><i class="bx bx-chevron-right"></i><a href="{{ url_for('about_page') }}">Về chúng tôi</a></li>
+                        <li><i class="bx bx-chevron-right"></i><a href="{{ url_for('faq_page') }}">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3 footer-links"><h4></h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i><a href="{{ url_for('course_page_vn') }}">Khóa học</a></li>
+                        <li><i class="bx bx-chevron-right"></i><a href="{{ url_for('library_page') }}">Thư viện</a></li>
+                        <li><i class="bx bx-chevron-right"></i><a href="{{ url_for('contribution_page') }}">Đóng góp</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-3 footer-links"><h4>Kết nối với chúng tôi</h4>
+                    <p></p>
+                    <div class="social-links mt-3"><a class="twitter" href="#"><i class="bx bxl-twitter"></i></a><a
+                            class="facebook" href="#"><i class="bx bxl-facebook"></i></a><a class="instagram"
+                                                                                            href="#"><i
+                            class="bx bxl-instagram"></i></a><a class="google-plus" href="#"><i
+                            class="bx bxl-skype"></i></a><a class="linkedin" href="#"><i
+                            class="bx bxl-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container py-4">
+        <div class="copyright"><span>        © Copyright </span><strong><span>Signlingo</span></strong><span>. All Rights Reserved      </span>
+        </div>
+        <div class="credits"><a href="https://bootstrapmade.com/"></a></div>
+    </div>
+</footer>
+
+<a class="d-flex justify-content-center align-items-center back-to-top" href="#"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="{{ url_for('static', filename='/js/script.min.js') }}"></script>
+<script src="{{ url_for('static', filename='/js/video.js') }}"></script>
+</body>
+</html>
